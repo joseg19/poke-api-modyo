@@ -21,5 +21,7 @@ public class PokemonDTO {
   private String photoUrl;
   private List<String> types;
   private Integer weight;
+  private String description;
   private List<String> abilities;
+  private EvolutionDTO evolutions;
 }
