@@ -1,7 +1,7 @@
 package com.joseg.pokeapimodyo.controller;
 
-import com.joseg.pokeapimodyo.client.PokeApiExternalClient;
-import com.joseg.pokeapimodyo.client.model.PokemonModel;
+import com.joseg.pokeapimodyo.dtos.PokemonDTO;
+import com.joseg.pokeapimodyo.service.PokemonService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class PokemonController {
 
-  private PokeApiExternalClient pokeApiExternalClient;
+  private PokemonService pokemonService;
 
   @GetMapping("/pokemon/{pokemonName}")
-  public PokemonModel getPokemonByName(
+  public PokemonDTO getPokemonByName(
       final HttpServletRequest request, @PathVariable("pokemonName") final String pokemonName) {
     log.info("getPokemonDetailed -> pokemonName: {}", pokemonName);
-    return pokeApiExternalClient.getPokemonByName(pokemonName);
+    return pokemonService.getPokemonByName(pokemonName);
   }
 }
