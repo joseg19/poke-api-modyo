@@ -1,0 +1,8 @@
+{
+  "request": {},
+  "response": {
+    "body": {
+      "message": "Generic feign client error"
+    }
+  }
+}

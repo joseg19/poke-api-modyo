@@ -23,8 +23,51 @@ class PokemonTest extends BaseTest {
 
     mockMvc
         .perform(
-            MockMvcRequestBuilders.get(POKE_API_URI.concat("raichu")).contentType(MediaType.APPLICATION_JSON))
+            MockMvcRequestBuilders.get(POKE_API_URI.concat("raichu"))
+                .contentType(MediaType.APPLICATION_JSON))
         .andExpect(content().json(getBody(jsonResponse)))
         .andExpect(status().isOk());
+  }
+
+  @Test
+  void shouldReturnErrorWhenPokeApiExternalError() throws Exception {
+
+    final String USE_CASE_FILE_PATH = BASE_FILE_PATH.concat("error_bulbasaur.json");
+    final JsonObject jsonResponse = getResponseFromJsonFile(USE_CASE_FILE_PATH);
+
+    mockMvc
+        .perform(
+            MockMvcRequestBuilders.get(POKE_API_URI.concat("bulbasaur"))
+                .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(content().json(getBody(jsonResponse)))
+        .andExpect(status().is5xxServerError());
+  }
+
+  @Test
+  void shouldReturnErrorWhenPokeApiExternalNotFoundPokemon() throws Exception {
+
+    final String USE_CASE_FILE_PATH = BASE_FILE_PATH.concat("error_not_found.json");
+    final JsonObject jsonResponse = getResponseFromJsonFile(USE_CASE_FILE_PATH);
+
+    mockMvc
+        .perform(
+            MockMvcRequestBuilders.get(POKE_API_URI.concat("not_found"))
+                .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(content().json(getBody(jsonResponse)))
+        .andExpect(status().is4xxClientError());
+  }
+
+  @Test
+  void shouldReturnErrorWhenPokeApiExternalReturnErrorNoBody() throws Exception {
+
+    final String USE_CASE_FILE_PATH = BASE_FILE_PATH.concat("error_feign_generic.json");
+    final JsonObject jsonResponse = getResponseFromJsonFile(USE_CASE_FILE_PATH);
+
+    mockMvc
+        .perform(
+            MockMvcRequestBuilders.get(POKE_API_URI.concat("charizard"))
+                .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(content().json(getBody(jsonResponse)))
+        .andExpect(status().is5xxServerError());
   }
 }

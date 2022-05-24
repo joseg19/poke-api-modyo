@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/pokemon/bulbasaur"
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "Internal Error POKE-API-V2"
+  }
+}
