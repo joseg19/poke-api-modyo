@@ -1,0 +1,33 @@
+{
+  "request": {},
+  "response": {
+    "body": {
+      "id": 26,
+      "name": "raichu",
+      "photoUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/26.svg",
+      "types": [
+        "electric"
+      ],
+      "weight": 300,
+      "description": "Its long tail\nserves as a\nground to protect\fitself from its\nown high voltage\npower.",
+      "abilities": [
+        "static",
+        "lightning-rod"
+      ],
+      "evolutions": {
+        "name": "pichu",
+        "evolvesTo": [
+          {
+            "name": "pikachu",
+            "evolvesTo": [
+              {
+                "name": "raichu",
+                "evolvesTo": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

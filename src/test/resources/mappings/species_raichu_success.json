@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/pokemon-species/raichu"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{\n    \"flavor_text_entries\": [\n        {\n            \"flavor_text\": \"Its long tail\\nserves as a\\nground to protect\\fitself from its\\nown high voltage\\npower.\",\n            \"language\": {\n                \"name\": \"en\",\n                \"url\": \"https://pokeapi.co/api/v2/language/9/\"\n            },\n            \"version\": {\n                \"name\": \"red\",\n                \"url\": \"https://pokeapi.co/api/v2/version/1/\"\n            }\n        }\n    ],\n    \"evolution_chain\": {\n        \"url\": \"https://pokeapi.co/api/v2/evolution-chain/10/\"\n    }\n}"
+  }
+}

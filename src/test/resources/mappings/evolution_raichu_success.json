@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/evolution-chain/10"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{\n    \"chain\": {\n        \"evolves_to\": [\n            {\n                \"evolves_to\": [\n                    {\n                        \"evolves_to\": [],\n                        \"species\": {\n                            \"name\": \"raichu\",\n                            \"url\": \"https://pokeapi.co/api/v2/pokemon-species/26/\"\n                        }\n                    }\n                ],\n                \"species\": {\n                    \"name\": \"pikachu\",\n                    \"url\": \"https://pokeapi.co/api/v2/pokemon-species/25/\"\n                }\n            }\n        ],\n        \"species\": {\n            \"name\": \"pichu\",\n            \"url\": \"https://pokeapi.co/api/v2/pokemon-species/172/\"\n        }\n    },\n    \"id\": 10\n}"
+  }
+}
