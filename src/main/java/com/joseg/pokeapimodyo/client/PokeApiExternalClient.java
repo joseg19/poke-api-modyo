@@ -15,8 +15,10 @@ public interface PokeApiExternalClient {
   PokemonModel getPokemonByName(@PathVariable("pokemonName") String pokemonName);
 
   @GetMapping("/pokemon-species/{pokemonName}")
+  @Cacheable("species")
   SpeciesWrapModel getSpeciesByPokemonName(@PathVariable("pokemonName") String pokemonName);
 
   @GetMapping("/evolution-chain/{evolutionId}")
+  @Cacheable("evolution")
   EvolutionModel getEvolutionChainById(@PathVariable("evolutionId") Integer evolutionId);
 }

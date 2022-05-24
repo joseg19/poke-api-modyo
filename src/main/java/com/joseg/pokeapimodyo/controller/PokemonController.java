@@ -20,7 +20,7 @@ public class PokemonController {
   @GetMapping("/pokemon/{pokemonName}")
   public PokemonDTO getPokemonByName(
       final HttpServletRequest request, @PathVariable("pokemonName") final String pokemonName) {
-    log.info("getPokemonDetailed -> pokemonName: {}", pokemonName);
+    log.info("getPokemon -> pokemonName: {}", pokemonName);
     return pokemonService.getPokemonByName(pokemonName);
   }
 }
