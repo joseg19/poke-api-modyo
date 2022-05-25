@@ -21,8 +21,7 @@
 
 3) Clone this repo 
 
-
-    git clone https://github.com/joseg19/poke-api-modyo.git
+`git clone https://github.com/joseg19/poke-api-modyo.git`
 
 
 5) In cloned repo root path:
@@ -40,12 +39,13 @@
 5) At the end of the .elasticbeanstalk/config.yml file, add the following:
 
 
-    deploy:
-      artifact: target/poke-api-modyo-0.0.1-SNAPSHOT.jar
+````
+deploy:
+  artifact: target/poke-api-modyo-0.0.1-SNAPSHOT.jar
+````
 
-
-Like this:
-![img.png](imgs/img2.png)
+   Like this:
+   ![img.png](imgs/img2.png)
 
 
     
@@ -56,37 +56,35 @@ Like this:
   * Windows:
 
 
-      .\mvnw.cmd clean package
+    `.\mvnw.cmd clean package`
 
 
   * Linux/Mac:
 
 
-      ./mvnw clean package
+    `./mvnw clean package`
 
 
 7) In cloned repo root path:
 
 
-    eb create
+    `eb create`
 
+    * Select environment name -> default
+    * Select CNAME -> default
+    * Select load balancer type -> default
+    * Select enable Spot Fleet -> N
+    * ENTER
 
-  * Select environment name -> default
-  * Select CNAME -> default
-  * Select load balancer type -> default
-  * Select enable Spot Fleet -> N
-  * ENTER
+    **NOTE:** Save CNAME for later
 
-  * Save CNAME for alter
-
-Reference image:
-![img.png](imgs/img.png)
+    Reference image:
+    ![img.png](imgs/img.png)
 
 
 8) In cloned repo root path:
 
-
-    eb setenv SERVER_PORT=5000
+    `eb setenv SERVER_PORT=5000`
 
 
 9) Test with curl:
@@ -94,8 +92,7 @@ Reference image:
 
    Replace with CNAME saved previously
 
-
-      curl REPLACE_HERE_YOUR_AWS_EB_HOST:8080/pokemon/pikachu
+    `curl REPLACE_HERE_YOUR_AWS_EB_HOST:8080/pokemon/pikachu`
 
 
       
@@ -115,22 +112,23 @@ Reference image:
   * Windows:
 
 
-      .\mvnw.cmd clean package
+      `.\mvnw.cmd clean package`
 
 
   * Linux/Mac:
 
 
-      ./mvnw clean package
+      `./mvnw clean package`
 
 
 2) In cloned repo root path:
 
 
-      java -jar .\target\poke-api-modyo-0.0.1-SNAPSHOT.jar
+      `java -jar .\target\poke-api-modyo-0.0.1-SNAPSHOT.jar`
+   
    
 3) Test with curl:
 
 
-      curl localhost:8080/pokemon/pikachu 
+      `curl localhost:8080/pokemon/pikachu` 
 
